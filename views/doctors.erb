@@ -1,0 +1,19 @@
+<h1>Your Current Doctors</h1>
+
+<a href="/doctors">View All Doctors</a><br>
+<a href="/doctors/new">Add New Doctor</a>
+
+<% if @doctors.any?() %>
+  <h3>Here are your doctors:</h3>
+
+  <ul>
+    <% @doctors.each() do |doctor| %>
+      <li><a href="/doctors/<%= doctor.id()%>"><%= doctor.name() %></a> </li>
+    <% end %>
+  </ul>
+
+<% else %>
+
+    <p>There are no doctors yet!</p>
+
+<% end %>
